@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Empleado;
+using Empleado.Enums;
 
 namespace EmpleadoMode
 {
@@ -49,15 +50,13 @@ namespace EmpleadoMode
         }
         public decimal GetSalarioMinimo()
         {
-            decimal max = decimal.MaxValue;
-            foreach (Empleado1 e in empleado)
+            if (empleado == null)
             {
-                if (e.Salario < max)
-                {
-                    max = e.Salario;
-                }
+                return 0;
             }
-            return max;
+
+            Array.Sort(empleado, new Empleado1.SalarioComparer());
+            return empleado[0].Salario;
         }
     }
 }

@@ -42,6 +42,10 @@ namespace Practica2
             this.btnSminimo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbNivelAcademico = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.lblNAcademico = new System.Windows.Forms.Label();
+            this.lblGenero = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +158,10 @@ namespace Practica2
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblGenero);
+            this.groupBox2.Controls.Add(this.lblNAcademico);
+            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.cmbNivelAcademico);
             this.groupBox2.Controls.Add(this.lblDNI);
             this.groupBox2.Controls.Add(this.lblNombres);
             this.groupBox2.Controls.Add(this.txtSalarios);
@@ -170,6 +178,50 @@ namespace Practica2
             this.groupBox2.Text = "Datos de Empleado";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // cmbNivelAcademico
+            // 
+            this.cmbNivelAcademico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbNivelAcademico.FormattingEnabled = true;
+            this.cmbNivelAcademico.Items.AddRange(new object[] {
+            "Primaria",
+            "Secundaria",
+            "Universidad",
+            "Doctorado"});
+            this.cmbNivelAcademico.Location = new System.Drawing.Point(461, 35);
+            this.cmbNivelAcademico.Name = "cmbNivelAcademico";
+            this.cmbNivelAcademico.Size = new System.Drawing.Size(121, 21);
+            this.cmbNivelAcademico.TabIndex = 8;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Masculino",
+            "Femenino"});
+            this.comboBox2.Location = new System.Drawing.Point(461, 117);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 9;
+            // 
+            // lblNAcademico
+            // 
+            this.lblNAcademico.AutoSize = true;
+            this.lblNAcademico.Location = new System.Drawing.Point(354, 38);
+            this.lblNAcademico.Name = "lblNAcademico";
+            this.lblNAcademico.Size = new System.Drawing.Size(90, 13);
+            this.lblNAcademico.TabIndex = 10;
+            this.lblNAcademico.Text = "Nivel Academico:";
+            // 
+            // lblGenero
+            // 
+            this.lblGenero.AutoSize = true;
+            this.lblGenero.Location = new System.Drawing.Point(357, 117);
+            this.lblGenero.Name = "lblGenero";
+            this.lblGenero.Size = new System.Drawing.Size(45, 13);
+            this.lblGenero.TabIndex = 11;
+            this.lblGenero.Text = "Genero:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +231,7 @@ namespace Practica2
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -201,6 +254,10 @@ namespace Practica2
         private System.Windows.Forms.Button btnSminimo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label lblGenero;
+        private System.Windows.Forms.Label lblNAcademico;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbNivelAcademico;
     }
 }
 
