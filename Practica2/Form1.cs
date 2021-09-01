@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 using Empleado;
 using EmpleadoMode;
+using Empleado.Enums;
 
 namespace Practica2
 {
@@ -39,14 +40,17 @@ namespace Practica2
                     Nombres=nombres,
                     Apellidos=apellidos,
                     Salario=salario,
-
+                    nivelAcademico = (NivelAcademico) Enum.GetValues(typeof(NivelAcademico)).GetValue(cmbNivelAcademico.SelectedIndex),
+                    Generos = (Genero)Enum.GetValues(typeof(Genero)).GetValue(comboBox2.SelectedIndex)
                 };
                 empMod.add(emp);
                 MessageBox.Show($@"
                 Nombres: {txtNombres.Text}{Environment.NewLine}
                 Apellidos: {txtApellidos.Text}{Environment.NewLine}
                 DNI: {txtDNI.Text}{Environment.NewLine}
-                Salario: {txtSalarios.Text}{Environment.NewLine}");
+                Salario: {txtSalarios.Text}{Environment.NewLine}
+                Nivel Academico: {cmbNivelAcademico.Text}{Environment.NewLine}
+                Genero: { comboBox2.Text}");
                 CleanTexBox();
 
 
@@ -89,6 +93,7 @@ namespace Practica2
             txtDNI.Text = string.Empty;
             txtNombres.Text = string.Empty;
             txtSalarios.Text = string.Empty;
+            
         }
 
         private void Salarios_Click(object sender, EventArgs e)
@@ -107,6 +112,11 @@ namespace Practica2
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
